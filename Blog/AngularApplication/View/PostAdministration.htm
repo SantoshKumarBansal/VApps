@@ -1,0 +1,39 @@
+﻿<form name="frmBlogAdministration" novalidate>
+    <table class="AppFormTableBig">
+        <tr>
+            <th style="width:38%; text-align:center">Title</th>
+            <th style="width:10%; text-align:center">Read</th>
+            <th style="width:10%; text-align:center">Like</th>
+            <th style="width:12%; text-align:center">Created On</th>
+            <th style="width:10%; text-align:center">Edit</th>
+            <th style="width:10%; text-align:center">Delete</th>
+            <th style="width:10%; text-align:center">Publish</th>
+        </tr>
+        <tr ng-repeat ="post in posts | orderBy : -CreatedDateTime">
+            <td>
+                {{post.Title}}
+            </td>
+            <td align="center">
+                {{post.Reads}}
+            </td>
+            <td align="center">
+                {{post.Likes}}
+            </td>
+            <td align="center">
+                {{post.CreatedDateTime}}
+            </td>
+            <td align="center">
+               <input type="button" id="{{post._id.$oid}}" value="Edit" ng-click="editPost($event)" class="btn btn-primary" />
+            </td>
+            <td align="center">
+               <input type="button" id="{{post._id.$oid}}" value="Delete" ng-click="deletePost($event)" class="btn btn-primary" />
+            </td>
+            <td align="center">
+               <input ng-show="post.IsPublished === 'false'" type="button" id="{{post._id.$oid}}" value="Publish" ng-click="publishPost($event)" class="btn btn-primary" />
+               <span ng-show="post.IsPublished === 'true'">Published</span>
+            </td>
+        </tr>
+    </table>
+</form>
+
+

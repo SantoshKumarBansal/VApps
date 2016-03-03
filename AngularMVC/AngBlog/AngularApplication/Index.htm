@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="CSS/Site.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/style.css" rel="stylesheet" type="text/css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-messages.min.js"></script>
+    <script src="App/app.js" type="text/javascript"></script>
+    <script src="App/mainController.js" type="text/javascript"></script>
+    <script src="App/homeController.js" type="text/javascript"></script>
+    <script src="App/signInController.js" type="text/javascript"></script>
+    <script src="App/loginController.js" type="text/javascript"></script>
+    <script src="App/logOutController.js" type="text/javascript"></script>
+    <script src="App/postAdministrationController.js" type="text/javascript"></script>
+    <script src="App/postDetailsController.js" type="text/javascript"></script>
+    <script src="App/allPublishedPostListController.js" type="text/javascript"></script>
+    <script src="App/createPostController.js" type="text/javascript"></script>
+    <script src="App/editPostController.js" type="text/javascript"></script>
+</head>
+<body ng-app="app" ng-controller="mainController">
+<div class="float-right">
+    <nav>
+        <ul id="menu">
+            <li>{{welcome}}</li>
+        </ul>
+    </nav>
+</div><br />
+  <div>
+    <p class="site-title">AngularJS Blog Application</p>
+</div>
+<div class="float-right">
+    <nav>
+        <div ng-show="menuType === 'Guest'">
+            <ul id="menu" >
+                 <li><a href="#Home">Home</a></li>
+                <li><a href="#AllPublishedPostList">Blogs</a></li>
+                <li><a href="#Login">Login</a></li>
+                <li><a href="#SignIn">Sign In</a></li>
+            </ul>
+        </div>
+        <ul id="menu" ng-show="menuType !== 'Guest'">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#CreatePost">Create Blog</a></li>
+            <li><a href="#PostAdministration">Blog Administration</a></li>
+            <li><a href="#AllPublishedPostList">All Published Blogs</a></li>
+            <li><a href="#LogOut">LogOut</a></li>
+        </ul>
+    </nav>
+</div>
+<br />
+<div ng-view>
+
+</div>
+</body>
+</html>

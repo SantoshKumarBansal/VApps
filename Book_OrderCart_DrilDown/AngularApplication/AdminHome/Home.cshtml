@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="../../AngularApplication/App/app.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/addBookController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/listBookController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/deleteBookController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/updateBookController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/factory.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/editBookController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/loginController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/issueBookController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/issueBookToStudentController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/cartallOrdersListController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/studentReportController.js" type="text/javascript"></script>
+<script src="../../AngularApplication/App/bookReportController.js" type="text/javascript"></script>
+<h2>Admin Home</h2>
+<a href="#Login">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#AddBook">Add Book</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#UpdateBook">Update Book</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#DeleteBook">Delete Book</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#ListBook">Book List</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#IssueBook">Issue Book</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#CartAllOrdersList">Order History</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#StudentReport">Student Report</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<a href="#BookReport">Book Report</a>
+<br />
+<div ng-app="adminapp">
+<div ng-view>
+
+</div>
+</div>

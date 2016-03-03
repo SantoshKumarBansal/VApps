@@ -1,0 +1,53 @@
+﻿<div class="post">
+    <div class="post-header">
+        <img class="post-avatar" alt="Kevin Delemme" height="52" width="52" src="CSS/avatar.jpg">
+        <h2 class="post-title"><a href="#/PostDetails/{{post._id.$oid}}">{{post.Title}}</a></h2>
+        <div class="post-meta"><i class="fa fa-bullseye"></i> Posted By {{post.PostedByName}} ({{post.PostedByEMailID}})</div>
+        <div class="post-meta"><i class="fa fa-bullseye"></i> Posted On {{post.CreatedDateTime}}</div>
+        <div class="post-meta"><i class="fa fa-thumbs-up"></i> {{post.Likes}}</div>
+        <div class="post-meta">
+            <ul class="list-inline">
+                <i class="fa fa-tags"></i> 
+                <li ng-repeat="tag in post.Tags">
+                    <a class="label label-success" href="#/tag/{{tag}}">{{tag}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="post-content">
+        <p>
+            {{post.Content}}
+        </p>
+    </div>
+    <br></br>
+    <div ng-show="post.Comments.length > 0">
+        <h5 class="post-title"><b>Comments :</b></h5>
+        <div class="post-header" ng-repeat="comment in post.Comments">
+            <div class="post-meta"><i class="fa fa-bullseye"></i> Comment By {{comment.CommentedBy}} on {{comment.CommentedDateTime}}</div>
+            <p>
+                {{comment.Comment}}
+            </p>
+        </div>
+    </div>
+    <div class="post-footer">
+        <button ng-click="likePost()" class="btn btn-xs btn-success" ng-hide="isAlreadyLiked">Like <i class="fa fa-thumbs-up"></i></button>
+        <button ng-click="unlikePost()" class="btn btn-xs btn-success" ng-show="isAlreadyLiked">Unlike <i class="fa fa-thumbs-down"></i></button>
+        <button ng-click="showCommentBlock()" class="btn btn-xs btn-success">Add a Comment</button>
+    </div>
+    <br></br>
+    <div class="post-content" ng-show="isShowCommentBlock">
+        <form name="frmComment" ng-submit="frmComment.$valid && frmComment.$dirty && saveComment()" novalidate>
+            <table class="AppFormTableWithOutBorder">
+                <tr>
+                    <td><textarea name="Comment" class="form-control" ng-model="comments.Comment" placeholder="Enter Your Comment Here......" rows="5" required></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="Enter Your Name Here" name="CommentedBy" ng-model="comments.CommentedBy" required /></td>
+                </tr>
+                <tr>
+                    <td align="center"><input type="submit" ng-disabled="frmComment.$invalid" class="btn btn-primary" value="      Publish Your Comment      "></input></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

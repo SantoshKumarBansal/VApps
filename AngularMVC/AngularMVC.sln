@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularMVC", "AngularMVC\AngularMVC.csproj", "{5311F636-EA66-4D6A-930A-0AEF3E1589DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngDemo", "AngDemo\AngDemo.csproj", "{CD2CA3E3-C2AB-413F-BC5D-F286EE4C2566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngBlog", "AngBlog\AngBlog.csproj", "{DA9B39ED-78EA-4305-A019-FFE9447B9DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList", "TodoList\TodoList.csproj", "{5D9B96CF-1F01-48FA-8A03-16593E15701E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListWithLocalStorage", "TodoListWithLocalStorage\TodoListWithLocalStorage.csproj", "{8FAB83AB-9115-4EA6-9D19-D3626D3E1070}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeacherManagement", "TeacherManagement\TeacherManagement.csproj", "{FB868333-ECD1-4DE0-8137-B401F74FFD14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5311F636-EA66-4D6A-930A-0AEF3E1589DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5311F636-EA66-4D6A-930A-0AEF3E1589DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5311F636-EA66-4D6A-930A-0AEF3E1589DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5311F636-EA66-4D6A-930A-0AEF3E1589DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2CA3E3-C2AB-413F-BC5D-F286EE4C2566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2CA3E3-C2AB-413F-BC5D-F286EE4C2566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2CA3E3-C2AB-413F-BC5D-F286EE4C2566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2CA3E3-C2AB-413F-BC5D-F286EE4C2566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA9B39ED-78EA-4305-A019-FFE9447B9DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA9B39ED-78EA-4305-A019-FFE9447B9DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA9B39ED-78EA-4305-A019-FFE9447B9DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA9B39ED-78EA-4305-A019-FFE9447B9DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9B96CF-1F01-48FA-8A03-16593E15701E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9B96CF-1F01-48FA-8A03-16593E15701E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9B96CF-1F01-48FA-8A03-16593E15701E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9B96CF-1F01-48FA-8A03-16593E15701E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FAB83AB-9115-4EA6-9D19-D3626D3E1070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FAB83AB-9115-4EA6-9D19-D3626D3E1070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FAB83AB-9115-4EA6-9D19-D3626D3E1070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FAB83AB-9115-4EA6-9D19-D3626D3E1070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB868333-ECD1-4DE0-8137-B401F74FFD14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB868333-ECD1-4DE0-8137-B401F74FFD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB868333-ECD1-4DE0-8137-B401F74FFD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB868333-ECD1-4DE0-8137-B401F74FFD14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

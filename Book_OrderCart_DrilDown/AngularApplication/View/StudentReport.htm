@@ -1,0 +1,17 @@
+﻿<form name="frmReportByState">
+    <table class="AppFormTable">
+        <tr>
+            <th align="center">Student</th>
+            <th align="center">Count</th>
+        </tr>
+        <tr ng-repeat ="report in reportByStudent">
+            <td align="center">
+                <a href="#BookReport/{{report.LoginID}}">{{report.LoginID}}</a>
+            </td>
+            <td align="center">
+               {{report.Count}}
+            </td>
+        </tr>
+    </table>
+</form>
+

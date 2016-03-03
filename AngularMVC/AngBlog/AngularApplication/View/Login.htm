@@ -1,0 +1,32 @@
+﻿<form name="frmLogin" ng-submit="frmLogin.$valid && frmLogin.$dirty && validateLogin()" novalidate>
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <th colspan="3">Login</th>
+        </tr>
+        <tr>
+            <td style="width:20%" align="right">E-Mail ID : </td>
+            <td style="width:20%"><input type="text" class="form-control" name="EMailID" ng-model="login.EMailID" maxlength="100" ng-pattern="/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/" required /></td>
+            <td style="width:60%">
+                <div ng-messages="frmLogin.EMailID.$error" ng-if="frmLogin.EMailID.$error && !frmLogin.EMailID.$pristine">
+                    <div ng-message="required">E-Mail ID is required.</div>
+                    <div ng-message="pattern">E-Mail ID Should Valid.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Password : </td>
+            <td><input type="password" class="form-control" name="Password" ng-model="login.Password" required /></td>
+            <td>
+                <div ng-messages="frmLogin.Password.$error" ng-if="frmLogin.Password.$error && !frmLogin.Password.$pristine">
+                    <div ng-message="required">Password is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="center"><input type="submit" ng-disabled="frmLogin.$invalid" class="btn btn-primary" value="      Login      "></input></td>
+            <td></td>
+        </tr>
+    </table>
+</form>
+

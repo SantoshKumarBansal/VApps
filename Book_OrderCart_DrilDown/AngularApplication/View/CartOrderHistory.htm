@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+</head>
+<form name="frmOrderHistory">
+    <table class="AppFormTable">
+        <tr>
+            <th colspan="6" align="left">Your Order History</th>
+        </tr>
+        <tr ng-show="ordersList.length > 0">
+            <td align="center"><b>Item</b></td>
+            <td align="center"><b>Price</b></td>
+            <td align="center"><b>Quantity</b></td>
+            <td align="center"><b>Total Amount</b></td>
+            <td align="center"><b>Order Date Time</b></td>
+        </tr>
+        <tr ng-repeat ="order in ordersList">
+            <td align="center">
+                {{order.Item}}
+            </td>
+            <td align="center">
+                {{order.ItemPrice}}
+            </td>
+            <td align="center">
+                {{order.Quantity}}
+            </td>
+            <td align="center">
+                {{order.TotalAmount}}
+            </td>
+            <td align="center">
+                {{order.OrderDateTime}}
+            </td>
+        </tr>
+        <tr ng-show="cart.length == 0">
+            <td colspan="6" align="center"><b>No Order Placed Till Now.</b></td>
+        </tr>
+    </table>
+</form>
+
+
+</body>
+</html>

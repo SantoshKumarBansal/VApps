@@ -1,0 +1,59 @@
+﻿<form name="frmAssignedTaskList" ng-submit="syncTeacherDetails()" novalidate>
+    <table class="AppFormTableBig">
+        <tr>
+            <th colspan="9">Teacher Details List</th>
+        </tr>
+        <tr ng-show="teacherDetails.length > 0">
+            <td style="width:14%; text-align:center"><b>Teacher Type</b></td>
+            <td style="width:40%; text-align:center"><b>Teacher Name</b></td>
+            <td style="width:10%; text-align:center"><b>Address</b></td>
+            <td style="width:10%; text-align:center"><b>State</b></td>
+            <td style="width:10%; text-align:center"><b>District</b></td>
+            <td style="width:10%; text-align:center"><b>Joining Date</b></td>
+            <td style="width:8%; text-align:center"><b>Edit</b></td>
+            <td style="width:8%; text-align:center"><b>Delete</b></td>
+            <td style="width:10%; text-align:center"><b>Mark as Complete</b></td>
+        </tr>
+        <tr ng-repeat ="teacher in teacherDetails">
+            <td>
+                <span ng-bind="teacher.Type"></span>
+            </td>
+            <td align="center">
+                {{teacher.TeacherName}}
+            </td>
+            <td align="center">
+                {{teacher.Address }}
+            </td>
+             <td align="center">
+                {{teacher.State }}
+            </td>
+             <td align="center">
+                {{teacher.District }}
+            </td>
+            <td align="center">
+                {{teacher.JoiningDate | date : 'dd/MM/yyyy'}}
+            </td>
+            <td align="center">
+                <input type="button" id="{{teacherDetails.indexOf(teacher)}}" value="Edit" ng-click="editTeacherDetails($event)" />
+            </td>
+            <td align="center">
+                <input type="button" id="{{teacherDetails.indexOf(teacher)}}" value="Delete" ng-click="deleteTeacherDetails($event)" />
+            </td>
+            <td align="center">
+                <input type="button" id="{{teacherDetails.indexOf(teacher)}}" value="Mark as Complete" ng-click="markAsComplete($event)" ng-show="teacher.Status === 'Incomplete'" />
+                <span ng-hide="teacher.Status === 'Incomplete'">Completed</span>
+            </td>
+        </tr>
+        <tr ng-show="teacherDetails.length == 0">
+            <td colspan="7" align="center"><b>No Teacher Details Found.</b></td>
+        </tr>
+    </table>
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <td><a href="#AddDetails"><b>Add New Teacher Details</b></a></td>
+        </tr>
+        <tr ng-show="teacherDetails.length > 0">
+            <td align="center"><input type="submit" value="      Sync Teacher Details List      "></input></td>
+        </tr>
+    </table>
+</form>

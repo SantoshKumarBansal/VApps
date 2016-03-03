@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<form name="frmOrderList" ng-submit="placeOrder()" novalidate>
+    <table class="AppFormTable">
+        <tr>
+            <th colspan="6" align="left">Your Cart</th>
+        </tr>
+        <tr ng-show="cart.length > 0">
+            <td align="center"><b>Item</b></td>
+            <td align="center"><b>Price</b></td>
+            <td align="center"><b>Quantity</b></td>
+            <td align="center"><b>Total Amount</b></td>
+            <td align="center"><b>Edit</b></td>
+            <td align="center"><b>Delete</b></td>
+        </tr>
+        <tr ng-repeat ="order in cart">
+            <td align="center">
+                {{order.Item}}
+            </td>
+            <td align="center">
+                {{order.ItemPrice}}
+            </td>
+            <td align="center">
+                {{order.Quantity}}
+            </td>
+            <td align="center">
+                {{order.TotalAmount}}
+            </td>
+            <td align="center">
+               <input type="button" id="{{$index}}" value="Edit" ng-click="editOrder($event)"/>
+            </td>
+            <td align="center">
+               <input type="button" id="{{$index}}" value="Delete" ng-click="deleteOrder($event)" />
+            </td>
+        </tr>
+        <tr ng-show="cart.length == 0">
+            <td colspan="6" align="center"><b>Your Cart is Empty</b></td>
+        </tr>
+    </table>
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <td><a href="#CartOrderItems"><b>Add More Items</b></a></td>
+        </tr>
+        <tr ng-show="cart.length > 0">
+            <td align="center"><input type="submit" value="      Place Order      "></input></td>
+        </tr>
+    </table>
+</form>
+
+
+</body>
+</html>

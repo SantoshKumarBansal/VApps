@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+<form>
+<table class="AppFormTable">
+    <tr>
+        <th colspan="8">Update Books</th>
+    </tr>
+    <tr>
+        <th>Object ID</th>
+        <th>Book Name</th>
+        <th>Author</th>
+        <th>Date of Purchase</th>
+        <th>Copies</th>
+        <th>Availability</th>
+        <th>Book Type</th>
+        <th>Update Book</th>
+    </tr>
+    <tr ng-repeat ="Books in BookList">
+        <td>
+            {{Books._id.$oid}}
+        </td>
+        <td>
+            {{Books.BookName}}
+        </td>
+          <td>
+            {{Books.AuthorName}}
+        </td>
+        <td>
+            {{Books.BookPurcahseDate | date:'dd/MM/yyyy'}}
+        </td>
+        <td>
+            {{Books.Copies}}
+        </td>
+        <td>
+            {{Books.Availability}}
+        </td>
+        <td>
+            <span ng-repeat="bookType in Books.BookType">
+                {{$index+1}}.{{bookType}}<br />
+             </span>
+        </td>
+        <td>
+            <input type="button"  id="{{Books._id.$oid}}" value="Update Book" data-ng-click='updateBook($event)'/>
+        </td>
+    </tr>
+</table>
+</form>
+</div>
+</body>
+</html>

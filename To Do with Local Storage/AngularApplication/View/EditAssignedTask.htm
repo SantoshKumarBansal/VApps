@@ -1,0 +1,48 @@
+﻿<form name="frmEditAssignedTask" ng-submit="frmEditAssignedTask.$valid && editAssignedTask()" novalidate>
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <th colspan="3">Edit Assigned Task</th>
+        </tr>
+        <tr>
+            <td style="width:20%" align="right">Subject : </td>
+            <td style="width:40%"><input type="text" name="Subject" ng-model="task.Subject" required /></td>
+            <td style="width:40%">
+                <div ng-messages="frmEditAssignedTask.Subject.$error" ng-if="frmEditAssignedTask.Subject.$error && !frmEditAssignedTask.Subject.$pristine">
+                    <div ng-message="required">Subject is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Description : </td>
+            <td><textarea name="Description" ng-model="task.Description" rows="5" required></textarea></td>
+            <td>
+                <div ng-messages="frmEditAssignedTask.Description.$error" ng-if="frmEditAssignedTask.Description.$error && !frmEditAssignedTask.Description.$pristine">
+                    <div ng-message="required">Description is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Due Date : </td>
+            <td><input type="date" name="DueDate" ng-model="task.DueDate" maxlength="10" required /></td>
+            <td>
+                <div ng-messages="frmEditAssignedTask.DueDate.$error" ng-if="frmEditAssignedTask.DueDate.$error && !frmEditAssignedTask.DueDate.$pristine">
+                    <div ng-message="required">Due Date is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Assigned To : </td>
+            <td><input type="text" name="AssignedTo" ng-model="task.AssignedTo" required /></td>
+            <td>
+                <div ng-messages="frmEditAssignedTask.AssignedTo.$error" ng-if="frmEditAssignedTask.AssignedTo.$error && !frmEditAssignedTask.AssignedTo.$pristine">
+                    <div ng-message="required">Assigned To is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="center"><input type="submit" ng-disabled="frmEditAssignedTask.$invalid" value="      Edit Assigned Task      "></input></td>
+            <td></td>
+        </tr>
+    </table>
+</form>

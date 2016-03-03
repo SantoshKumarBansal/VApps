@@ -1,0 +1,36 @@
+﻿<form name="frmAssignedTaskList">
+<select ng-model="filter">
+    <<option value=''>--Select Column--</option>
+    <option value='Type'>by Type </option>
+    <option value='TeacherName'>by Teacher Name </option>
+    <option value='Address'>by Address </option>
+    <option value='JoiningDate'>by Joining Date </option>
+</select>
+<input ng-model='query'>
+    <table class="AppFormTableBig">
+        <tr>
+            <th colspan="7">Teacher List By column Filter</th>
+        </tr>
+        <tr>
+            <td style="width:14%; text-align:center"><b>Teacher Type</b></td>
+            <td style="width:40%; text-align:center"><b>Teacher Name</b></td>
+            <td style="width:10%; text-align:center"><b>Address</b></td>
+            <td style="width:10%; text-align:center"><b>Joining Date</b></td>
+        </tr>
+        <!--<tr ng-repeat ="teacher in teacherDetails | filter: getFilter() ">-->
+        <tr ng-repeat ="teacher in teacherDetails | orderBy : ['TeacherName', '-JoiningDate'] | filter: search"">
+            <td>
+                 {{teacher.Type}}
+            </td>
+            <td align="center">
+                {{teacher.TeacherName}}
+            </td>
+            <td align="center">
+                {{teacher.Address }}
+            </td>
+            <td align="center">
+                {{teacher.JoiningDate | date : 'dd/MM/yyyy'}}
+            </td>
+        </tr>
+    </table>
+</form>

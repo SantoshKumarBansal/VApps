@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<form name="frmLogin"  ng-submit="validateLogin()">
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <th colspan="3">StudentLogin</th>
+        </tr>
+        <tr>
+            <td style="width:20%" align="right">Login ID : </td>
+            <td style="width:20%"><input type="text" name="loginID" ng-model="login.loginID" maxlength="100" required /></td>
+            <td style="width:60%">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Password : </td>
+            <td><input type="password" name="Password" ng-model="login.Password" required /></td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="center"><input type="submit" value="      Login      "></input></td>
+            <td></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

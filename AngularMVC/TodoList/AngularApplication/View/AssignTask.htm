@@ -1,0 +1,70 @@
+﻿<form name="frmAssignTask" data-ng-submit="assignTask()" name="assignTask">
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <th colspan="2">To Do List</th>
+        </tr>
+        <tr>
+            <td style="width:40%" align="right">Task Name : </td>
+            <td style="width:60%"><input type="text" name="taskName" ng-model="task.taskName" required/></td>
+        </tr>
+        <tr>
+            <td align="right">Task Description : </td>
+            <td><input type="text" name="taskDescription" ng-model="task.taskDescription" required/></td>
+        </tr>
+        <tr>
+            <td align="right">Date : </td>
+            <td><input type="date" name="taskDate" ng-model="task.taskDate" required/></td>
+        </tr>
+         <tr>
+            <td align="right">Assigned To : </td>
+            <td><input type="text" name="taskAssignedTo" ng-model="task.taskAssignedTo" required/></td>
+        </tr>
+         <tr>
+         <td></td>
+            <td><input type="submit" value="      Assign Task      "></input></td>
+           
+        </tr>
+    </table>
+    <br /><br />
+   
+    <table class="AppFormTable">
+        <th colspan="8"> List of Tasks</th>
+        <tr>
+            <th>Object ID</th>
+            <th>Task Name</th>
+            <th>Task Description</th>
+            <th>Task Date</th>
+            <th>Task Assigned To</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Status</th>
+        </tr>
+        <tr ng-repeat ="Task in TaskList">
+            <td>
+                {{Task._id.$oid}}
+            </td>
+            <td>
+                {{Task.taskName}}
+            </td>
+             <td>
+                {{Task.taskDescription }}
+            </td>
+             <td>
+                {{Task.taskDate | date:'dd/MM/yyyy'}}
+            </td>
+             <td>
+                {{Task.taskAssignedTo}}
+            </td>
+             <td>
+               <input type="button"  id="{{Task._id.$oid}}" value="Edit" data-ng-click='getTaskListforEdit($event)' />
+            </td>
+            <td>
+               <input type="button"  id="{{Task._id.$oid}}" value="Delete" data-ng-click='getTaskListforDelete($event)' />
+            </td>
+            <td>
+                <input type="button" id="{{Task._id.$oid}}" value="Mark as Complete" ng-click="markAsCompleteAssignedTask($event)" ng-show="Task.Status === 'Incomplete'" />
+                <span ng-hide="Task.Status === 'Incomplete'">Already Completed</span>
+            </td>
+        </tr>
+    </table>
+</form>

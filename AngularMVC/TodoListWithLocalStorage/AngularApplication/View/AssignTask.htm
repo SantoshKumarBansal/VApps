@@ -1,0 +1,48 @@
+﻿<form name="frmAssignTask" ng-submit="frmAssignTask.$valid && frmAssignTask.$dirty && assignTask()" novalidate>
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <th colspan="3">Assign Task</th>
+        </tr>
+        <tr>
+            <td style="width:20%" align="right">Subject : </td>
+            <td style="width:40%"><input type="text" name="Subject" ng-model="task.Subject" required /></td>
+            <td style="width:40%">
+                <div ng-messages="frmAssignTask.Subject.$error" ng-if="frmAssignTask.Subject.$error && !frmAssignTask.Subject.$pristine">
+                    <div ng-message="required">Subject is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Description : </td>
+            <td><textarea name="Description" ng-model="task.Description" rows="5" required></textarea></td>
+            <td>
+                <div ng-messages="frmAssignTask.Description.$error" ng-if="frmAssignTask.Description.$error && !frmAssignTask.Description.$pristine">
+                    <div ng-message="required">Description is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Due Date : </td>
+            <td><input type="date" name="DueDate" ng-model="task.DueDate" maxlength="10" required /></td>
+            <td>
+                <div ng-messages="frmAssignTask.DueDate.$error" ng-if="frmAssignTask.DueDate.$error && !frmAssignTask.DueDate.$pristine">
+                    <div ng-message="required">Due Date is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Assigned To : </td>
+            <td><input type="text" name="AssignedTo" ng-model="task.AssignedTo" required /></td>
+            <td>
+                <div ng-messages="frmAssignTask.AssignedTo.$error" ng-if="frmAssignTask.AssignedTo.$error && !frmAssignTask.AssignedTo.$pristine">
+                    <div ng-message="required">Assigned To is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="center"><input type="submit" ng-disabled="frmAssignTask.$invalid" value="      Assign Task      "></input></td>
+            <td></td>
+        </tr>
+    </table>
+</form>

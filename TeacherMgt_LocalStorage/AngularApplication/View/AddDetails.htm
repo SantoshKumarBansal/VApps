@@ -1,0 +1,84 @@
+﻿
+<form name="frmAssignTask" ng-submit="frmAssignTask.$valid && frmAssignTask.$dirty && addDetails()" novalidate>
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <th colspan="3">Add Teacher Details</th>
+        </tr>
+        <tr>
+            <td style="width:20%" align="right">Teacher Type : </td>
+            <td style="width:40%">
+             <select name="teacherType" ng-model="Teacher.Type" required>
+                    <option value="">---Please select---</option> 
+                    <option value="Primary">Primary Teacher</option>
+                    <option value="Secondary">Secondary Teacher</option>
+                </select>
+            
+            </td>
+            <td style="width:40%">
+                <div ng-messages="frmAssignTask.teacherType.$error" ng-if="frmAssignTask.teacherType.$error && !frmAssignTask.teacherType.$pristine">
+                    <div ng-message="required">Teacher Type is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" align="right">Teacher Name : </td>
+            <td style="width:40%"><input type="text" name="TeacherName" ng-model="Teacher.TeacherName" required /></td>
+            <td style="width:40%">
+                <div ng-messages="frmAssignTask.TeacherName.$error" ng-if="frmAssignTask.TeacherName.$error && !frmAssignTask.TeacherName.$pristine">
+                    <div ng-message="required">Teacher Name is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Address : </td>
+            <td><textarea name="Address" ng-model="Teacher.Address" rows="3" required></textarea></td>
+            <td>
+                <div ng-messages="frmAssignTask.Address.$error" ng-if="frmAssignTask.Address.$error && !frmAssignTask.Address.$pristine">
+                    <div ng-message="required">Teacher Address is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">State : </td>
+            <td>
+                <select name="State" ng-model="Teacher.State" ng-change="getDistrictList(Teacher.State)" required>
+                    <option value="">Select State</option>
+                    <option ng-repeat="state in stateList" value="{{state.StateName}}">{{state.StateName}}</option>
+                </select>
+            </td>
+            <td>
+                <div ng-messages="frmAssignTask.State.$error" ng-if="frmAssignTask.State.$dirty && frmAssignTask.State.$invalid">
+                    <div ng-message="required">State is required.</div>
+                </div> 
+            </td>
+        </tr>
+        <tr>
+            <td align="right">District : </td>
+            <td>
+                <select name="State" ng-model="Teacher.District" required>
+                    <option value="">Select District</option>
+                    <option ng-repeat="district in districtList" value="{{district.DistrictName}}">{{district.DistrictName}}</option>
+                </select>
+            </td>
+            <td>
+                <div ng-messages="frmAssignTask.District.$error" ng-if="frmAssignTask.District.$dirty && frmAssignTask.District.$invalid">
+                    <div ng-message="required">District is required.</div>
+                </div> 
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Joining Date : </td>
+            <td><input type="date" name="JoiningDate" ng-model="Teacher.JoiningDate" maxlength="10" required /></td>
+            <td>
+                <div ng-messages="frmAssignTask.JoiningDate.$error" ng-if="frmAssignTask.JoiningDate.$error && !frmAssignTask.JoiningDate.$pristine">
+                    <div ng-message="required">Joining Date is required.</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="center"><input type="submit" ng-disabled="frmAssignTask.$invalid" value="      Add Teacher Details      "></input></td>
+            <td></td>
+        </tr>
+    </table>
+</form>

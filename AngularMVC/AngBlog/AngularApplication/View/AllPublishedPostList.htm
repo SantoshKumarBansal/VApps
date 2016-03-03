@@ -1,0 +1,23 @@
+﻿<div class="post" ng-repeat="post in posts">
+    <div class="post-header">
+        <img class="post-avatar" alt="Kevin Delemme" height="52" width="52" src="CSS/avatar.jpg">
+        <h2 class="post-title"><a href="#/PostDetails/{{post._id.$oid}}">{{post.Title}}</a></h2>
+        <div class="post-meta"><i class="fa fa-bullseye"></i> Posted By {{post.PostedByName}} ({{post.PostedByEMailID}})</div>
+        <div class="post-meta"><i class="fa fa-bullseye"></i> Posted On {{post.CreatedDateTime}}</div>
+        <div class="post-meta"><i class="fa fa-thumbs-up"></i> {{post.Likes}}</div>
+        <div class="post-meta">
+            <ul class="list-inline">
+                <i class="fa fa-tags"></i> 
+                <li ng-repeat="tag in post.Tags">
+                    <a class="label label-success" href="#AllPublishedPostList/{{tag}}">{{tag}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="post-content">
+        <p>
+            {{post.Content}}
+        </p>
+        <a href="#/PostDetails/{{post._id.$oid}}" class="btn btn-primary">Read More</a>
+    </div>
+</div>

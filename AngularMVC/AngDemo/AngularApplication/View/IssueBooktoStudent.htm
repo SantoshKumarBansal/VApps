@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<div >
+ <form ng-app="adminapp" data-ng-submit="issueBook()" name="Bookissue">
+    <table class="AppFormTable">
+        <tr>
+            <td>
+                <select name="issuedTo" ng-model="Book.issuedTo" required>
+                    <option value="">Select Student</option>
+                    <option ng-repeat="student in studentList" value="{{student.LoginID}}">{{student.LoginID}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="center"><input type="submit" value="Issue Book" /></td>
+        </tr>
+    </table>
+ </form>
+ </div>
+
+</body>
+</html>

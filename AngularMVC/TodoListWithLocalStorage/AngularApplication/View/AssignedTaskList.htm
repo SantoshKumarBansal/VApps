@@ -1,0 +1,53 @@
+﻿<form name="frmAssignedTaskList"ng-submit="syncAssignedTaskList()" novalidate>
+    <table class="AppFormTableBig">
+        <tr>
+            <th colspan="7">Assigned Task List</th>
+        </tr>
+        <tr ng-show="taskList.length > 0">
+            <td style="width:14%; text-align:center"><b>Subject</b></td>
+            <td style="width:40%; text-align:center"><b>Description</b></td>
+            <td style="width:10%; text-align:center"><b>Due Date</b></td>
+            <td style="width:10%; text-align:center"><b>Assigned To</b></td>
+            <td style="width:8%; text-align:center"><b>Edit</b></td>
+            <td style="width:8%; text-align:center"><b>Delete</b></td>
+            <td style="width:10%; text-align:center"><b>Mark as Complete</b></td>
+        </tr>
+        <tr ng-repeat ="task in taskList | filter:{IsDeleted:'N'}">
+            <td>
+                <span ng-bind="task.Subject"></span>
+            </td>
+            <td align="center">
+                {{task.Description}}
+            </td>
+            <td align="center">
+                {{task.DueDate | date : 'dd/MM/yyyy'}}
+            </td>
+            <td align="center">
+                {{task.AssignedTo}}
+            </td>
+            <td align="center">
+                <input type="button" id="{{taskList.indexOf(task)}}" value="Edit" ng-click="editAssignedTask($event)" ng-show="task.Status === 'Incomplete'"  />
+                <span ng-hide="task.Status === 'Incomplete'">Already Completed</span>
+            </td>
+            <td align="center">
+                <input type="button" id="{{taskList.indexOf(task)}}" value="Delete" ng-click="deleteAssignedTask($event)" ng-show="task.Status === 'Incomplete'" />
+                <span ng-hide="task.Status === 'Incomplete'">Already Completed</span>
+            </td>
+            <td align="center">
+                <input type="button" id="{{taskList.indexOf(task)}}" value="Mark as Complete" ng-click="markAsCompleteAssignedTask($event)" ng-show="task.Status === 'Incomplete'" />
+                <span ng-hide="task.Status === 'Incomplete'">Already Completed</span>
+            </td>
+        </tr>
+        <tr ng-show="taskList.length == 0">
+            <td colspan="7" align="center"><b>No Task Assigned Till Now.</b></td>
+        </tr>
+    </table>
+    <table class="AppFormTableWithOutBorder">
+        <tr>
+            <td><a href="#AssignTask"><b>Assign New Task</b></a></td>
+        </tr>
+        <tr ng-show="taskList.length > 0">
+            <td align="center"><input type="submit" value="      Sync Assigned Task List      "></input></td>
+        </tr>
+    </table>
+</form>

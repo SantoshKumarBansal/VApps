@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <style>
+            input[type=radio] {
+            border: 1px solid #e2e2e2;
+            background: #fff;
+            color: #333;
+            font-size: 1.2em;
+            margin: 5px 0 6px 0;
+            padding: 5px;
+            width: 20px;
+             }
+    </style>
+    
+</head>
+<body>
+<div >
+ <form ng-app="adminapp" data-ng-submit="editBook()" name="Bookadd">
+    <table class="AppFormTable">
+        <tr>
+            <th colspan="4">Update Book</th>
+        </tr>
+       <tr>
+            <td style="width: 25%;" align="right">Name of Book :</td>
+            <td style="width: 25%;"><input type="text" name="BookName" ng-model="Book.BookName" required/>  </td>
+            <td style="width: 25%;" align="right">Author :</td> 
+            <td style="width: 25%;"><input type="text" name="AuthorName" ng-model="Book.AuthorName" required/></td>
+            
+        </tr>
+         <tr>
+            <td align="right">Date of  Purchase : </td>
+            <td><input type="date" name="BookPurcahseDate" ng-model="Book.BookPurcahseDate" required/></td>
+            <td align="right">No. of Copies : </td>
+            <td>
+                <select name="copies" ng-model="Book.Copies" required>
+                    <option value="">---Please select---</option> 
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="333">333</option>
+                    <option value="4843">4843</option>
+                </select> 
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Currently Available : </td>
+            <td>
+                <input type="radio" value="Yes" ng-model="Book.Availability" name="BookAvailability" required>Yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" value="No" ng-model="Book.Availability" name="BookAvailability" required>No
+            </td>
+            <!--<td align="right">Book Type : </td>
+            <td>
+                <span ng-repeat="bookType in BookTypeList">
+                    <input type="checkbox" name="BookType" value="{{bookType}}" ng-checked="BookTypeSelection.indexOf(bookType) > -1" ng-click="toggleBookType(bookType)" required />{{bookType}} 
+                </span>
+            </td>-->
+        </tr>
+        <tr>
+            <td colspan="4" align="center"><input type="submit" value="Update Book" /></td>
+        </tr>
+    </table>
+ </form>
+ </div>
+</body>
+</html>

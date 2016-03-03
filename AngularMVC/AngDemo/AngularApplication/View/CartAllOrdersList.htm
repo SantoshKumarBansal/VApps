@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<form name="frmSignInUsersList">
+    <div ng-repeat ="signInUser in getUsersList | filter: { UserType: 'student' }">
+        <table class="AppFormTable">
+            <tr>
+                <th colspan="5">Name : {{signInUser.LoginID}}</th>
+            </tr>
+            <tr ng-show="signInUser.Orders.length > 0">
+                <td style="width:20%" align="center"><b>Item</b></td>
+                <td style="width:20%" align="center"><b>Price</b></td>
+                <td style="width:20%" align="center"><b>Quantity</b></td>
+                <td style="width:20%" align="center"><b>Total Amount</b></td>
+                <td style="width:20%" align="center"><b>Order Date Time</b></td>
+            </tr>
+            <tr ng-repeat ="order in signInUser.Orders">
+                <td align="center">
+                    {{order.Item}}
+                </td>
+                <td align="center">
+                    {{order.ItemPrice}}
+                </td>
+                <td align="center">
+                    {{order.Quantity}}
+                </td>
+                <td align="center">
+                    {{order.TotalAmount}}
+                </td>
+                <td align="center">
+                    {{order.OrderDateTime}}
+                </td>
+            </tr>
+            <tr ng-show="signInUser.Orders.length == 0 || signInUser.Orders == null">
+                <td colspan="5" align="center"><b>No Order Placed Till Now.</b></td>
+            </tr>
+        </table>
+    </div>
+</form>
+
+
+</body>
+</html>
